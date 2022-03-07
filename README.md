@@ -1,2 +1,2 @@
 # Web-i-mobilne-aplikacije
-Projekat na predavanjima
+Hotelski sistem sa predavanja
