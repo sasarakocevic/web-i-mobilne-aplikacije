@@ -25,10 +25,10 @@ DROP TABLE IF EXISTS `drzava`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `drzava` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `naziv` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `drzava` (
 
 LOCK TABLES `drzava` WRITE;
 /*!40000 ALTER TABLE `drzava` DISABLE KEYS */;
-INSERT INTO `drzava` VALUES (1,'Crna Gora'),(2,'Bosna i  Hercegovina'),(3,'Srbija'),(4,'Albanija'),(5,'Hrvatsla');
+INSERT INTO `drzava` VALUES (1,'Crna Gora'),(2,'Bosna i  Hercegovina'),(3,'Srbija'),(4,'Albanija'),(5,'Hrvatsla'),(6,'Slovenija');
 /*!40000 ALTER TABLE `drzava` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -272,4 +272,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-15 11:28:58
+-- Dump completed on 2022-03-24 10:43:47
