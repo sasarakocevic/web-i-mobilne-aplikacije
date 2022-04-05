@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Drzava;
+use App\Models\Gost;
 use Illuminate\Http\Request;
 
-class DrzavaController extends Controller
+class GostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,9 @@ class DrzavaController extends Controller
      */
     public function index()
     {
-//        return \DB::select("select * from drzava"); //nativequery get all
-        $data = Drzava::all(); //Model get all
+        $data = Gost::all();
         return $data;
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -28,7 +26,7 @@ class DrzavaController extends Controller
      */
     public function store(Request $request)
     {
-        $data = Drzava::create($request->all());
+        $data = Gost::create($request->all());
         return $data;
     }
 
@@ -40,7 +38,7 @@ class DrzavaController extends Controller
      */
     public function show($id)
     {
-        $data = Drzava::findOrFail($id);
+        $data = Gost::with('drzave')->find($id);
         return $data;
     }
 
@@ -53,14 +51,7 @@ class DrzavaController extends Controller
      */
     public function update(Request $request, $id)
     {
-//        $drzave = $request->all();
-//        $affected = \DB::table('drzava')  //nativequery update
-//            ->where('id', $id)
-//            ->update(['naziv' => $drzave['naziv']]);
-
-        $drzava = Drzava::find($id);
-        $drzava->update($request->all()); //model update
-        return $drzava;
+        //
     }
 
     /**
@@ -71,8 +62,6 @@ class DrzavaController extends Controller
      */
     public function destroy($id)
     {
-        $drzava = Drzava::findOrFail($id);
-        $drzava->delete($id);
-        return'{"success":"Uspjesno ste pobirisali drzavu."}';
+        //
     }
 }

@@ -21,6 +21,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group([
     'middleware' => 'api'
 ], function ($router) {
+
+    //DRZAVA
     Route::get('drzava', [\App\Http\Controllers\DrzavaController::class, 'index']);
+    Route::get('drzava/{id}', [\App\Http\Controllers\DrzavaController::class, 'show']);
     Route::post('drzava', [\App\Http\Controllers\DrzavaController::class, 'store']);
+    Route::put('drzava/{id}', [\App\Http\Controllers\DrzavaController::class, 'update']);
+    Route::delete('drzava/{id}', [\App\Http\Controllers\DrzavaController::class, 'destroy']);
+
+    //GOST
+    Route::get('gost', [\App\Http\Controllers\GostController::class, 'index']);
+    Route::get('gost/{id}', [\App\Http\Controllers\GostController::class, 'show']);
+    Route::post('gost', [\App\Http\Controllers\GostController::class, 'store']);
 });
