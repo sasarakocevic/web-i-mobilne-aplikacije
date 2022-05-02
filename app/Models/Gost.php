@@ -17,8 +17,12 @@ class Gost extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'ime','prezime','email','datum_rodjenja','drzava_id'
+        'ime','prezime','email','datum_rodjenja'
     ];
+
+//    protected $guarded = [
+//        'drzava_id'
+//    ];
 
     public $timestamps = false;
 
